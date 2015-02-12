@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="scripts.js"></script>
+
+</head>
+<body>
+    <div id="box">
+        <input id="btn1" type="button" value="按钮">
+        <a id="baidu" href="http://www.baidu.com">百度</a>
+    </div>
+    <script type="text/javascript">
+        var btn1=document.getElementById('btn1');
+        extendUtil.addHandler(btn1,'click',function(e){
+
+//            alert(extendUtil.GetType(event));
+//            alert(extendUtil.GetTarget(event).value);
+            //阻止冒泡
+            e.stopPropagation();
+        });
+
+        var div1=document.getElementById('box');
+        extendUtil.addHandler(div1,'click',function(e){
+           alert('冒泡了');
+        });
+
+        var baidu=document.getElementById('baidu');
+        extendUtil.addHandler(baidu,'click',function(e){
+             var event=  extendUtil.GetEvent(e);
+             extendUtil.preventDefault(event);
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        var arr= new Array();
+        function person(){
+            for(var i=0;i<10;i++){
+
+                var item=function(i){
+
+                   return function(){
+                       return i;
+                   }
+                }(i);
+                arr.push(item);
+            }
+        }
+
+        person();
+
+        for(var i=0;i<10;i++){
+            console.log(arr[i]());
+        }
+
+
+//        function aaa(){
+//            alert(this)
+//        }
+//
+//        aaa();
+//
+//        var a=function(){
+//            function xxx(){alert(this)};
+//            xxx();
+//        }
+//
+//
+        var name = "clever coder";
+
+        var person = {
+            name: "foocoder",
+            hello: function (sth) {
+                var sayhello = function (sth) {
+                    console.log(this.name + " says " + sth);
+                };
+                sayhello.apply(this,[sth]);
+            }
+        }
+
+         person.hello("hello world");//clever coder says hello world
+
+    </script>
+</body>
+</html>
