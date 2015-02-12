@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片切换demo</title>
+    <link rel="stylesheet" href="css/slider.css">
+    <script type="text/javascript">
+        window.onload=function(){
+            var index=1;
+            var isMove=false;
+            var prev=document.getElementById('prev');
+            var next=document.getElementById('next');
+            var list=document.getElementById('list');
+            var IntervalId=null;
+            document.getElementById("container").addEventListener("mouseover",function(){
+                 clearInterval(IntervalId);
+            },false);
+            document.getElementById("container").addEventListener("mouseout",function(){
+                IntervalId=  setInterval(function(){
+                    next.onclick();
+                },1000);
+            },false);
+//            document.getElementById("container").onmouseover=function(){
+//                clearInterval(IntervalId);
+//            }
+//            document.getElementById("container").onmouseout=function(){
+//                IntervalId=  setInterval(function(){
+//                     next.onclick();
+//                },1000);
+//            }
+
+            function aninmate(offset){
+                isMove=true;
+                var newLeft=parseInt(list.style.left)+offset;
+                var timeout=300;
+                var interval=100;
+                var speed=offset/(timeout/interval);
+                function go() {
+                    if ((speed < 0 && parseInt(list.style.left) + speed > newLeft)
+                            || (speed > 0 && parseInt(list.style.left) + speed < newLeft)) {
+                        list.style.left = parseInt(list.style.left) + speed + 'px';
+                       setTimeout(go,interval);
+                    }
+                    else {
+                        isMove=false;
+                        list.style.left = newLeft + 'px';
+                        if (newLeft < -1000) {
+                            list.style.left = -200 + 'px';
+                        }
+                        if (newLeft > -200) {
+                            list.style.left = -1000 + 'px';
+                        }
+                    }
+                }
+                go();
+            }
+            prev.onclick=function(){
+                if(!isMove) {
+                    if(index==1){
+                       index=5;
+                    }
+                    else {
+                       index--;
+                    }
+                    showbutton(index);
+                    aninmate(200);
+                }
+            }
+            next.onclick=function() {
+                if (!isMove) {
+                    if (index == 5) {
+                        index = 1;
+                    } else {
+                        index++;
+                    }
+                    showbutton(index);
+                    aninmate(-200);
+                }
+            }
+
+
+
+            function showbutton(){
+                var buttons= document.getElementById('buttons').getElementsByTagName('span');
+
+                for(var i= 0,len=buttons.length;i<len;i++){
+                    if(buttons[i].className=="on"){
+                        buttons[i].className="off";
+                        break;
+                    }
+                }
+                buttons[index-1].className="on";
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+        <div id="list" style="left: -200px">
+                <img src="image/5.jpg" index="5">
+                <img src="image/1.jpg" index="1">
+                <img src="image/2.jpg" index="2">
+                <img src="image/3.jpg" index="3">
+                <img src="image/4.jpg" index="4">
+                <img src="image/5.jpg" index="5">
+                <img src="image/1.jpg" index="1">
+        </div>
+    <div class="ui-prev" id="prev">
+    <img src="image/previous.png">
+        </div>
+        <div class="ui-next" id="next">
+    <img src="image/next.png"></div>
+
+</div>
+<div id="buttons">
+    <span class="on" index="1">1</span>
+    <span class="off" index="2">2</span>
+    <span class="off" index="3">3</span>
+    <span class="off" index="4">4</span>
+    <span class="off" index="5">5</span>
+</div>
+</body>
+</html>

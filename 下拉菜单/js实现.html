@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{margin:0;padding: 0}
+
+        .wrapper{  margin: 0 auto;width: 900px}
+        ul{
+            background: #eee;
+            height: 40px;
+        }
+        ul li {
+            float: left;
+            line-height: 40px;
+            list-style: none;
+            text-align: center;
+            position: relative;
+        }
+        ul li a{
+            text-decoration: none;
+            color:#000000;
+            display: block;
+            padding: 0 10px;
+        }
+        ul li a:hover{
+            color: #ffffff;
+            background: #000000;
+        }
+
+        ul li ul {
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            display: none;
+        }
+        ul li ul li{
+            float: none;
+        }
+        ul li ul li a{
+            background: #eee;
+        }
+        ul li ul li a:hover{
+            background: blue;
+        }
+    </style>
+    <script type="text/javascript">
+        function show(li){
+            li.getElementsByTagName('ul')[0].style.display='block';
+        }
+        function hide(li){
+            li.getElementsByTagName('ul')[0].style.display='none';
+        }
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li onmouseover="show(this)" onmouseout="hide(this)">
+            <a href="#">精选市场</a>
+            <ul>
+                <li><a href="#">女装</a></li>
+                <li><a href="#">男装</a></li>
+                <li><a href="#">电器</a></li>
+            </ul>
+        </li>
+        <li onmouseover="show(this)" onmouseout="hide(this)">
+            <a href="#">手机数码</a>
+            <ul>
+                <li><a href="#">热卖手机</a></li>
+                <li><a href="#">电脑办公</a></li>
+                <li><a href="#">数码影音</a></li>
+            </ul>
+        </li>
+        <li><a href="#">汽车配件</a></li>
+        <li><a href="#">图书音像</a></li>
+    </ul>
+</div>
+</body>
+</html>

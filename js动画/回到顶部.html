@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0}
+        .main{margin: 0 auto;width: 1190px}
+        .back{position: fixed;display:none;bottom: 30px;right: 30px;width: 40px;height: 40px;background: url(top_bg.png) no-repeat left top}
+        .back:hover{background: url(top_bg.png) no-repeat left -40px;cursor: pointer}
+    </style>
+    <script type="application/javascript">
+        window.onload=function(){
+           var timer=null;
+           var btn= document.getElementById('btnTop');
+           btn.onclick=function(){
+                timer=setInterval(function(){
+                    var osTop=document.documentElement.scrollTop || document.body.scrollTop;
+                    if(osTop==0){
+                        clearInterval(timer);
+                    }else{
+                        var ispeed=Math.ceil(osTop/6);
+                        osTop-=ispeed;
+                        document.documentElement.scrollTop = document.body.scrollTop=osTop;
+                    }
+                },30);
+           }
+
+
+
+        }
+
+        window.onscroll=function(){
+            var oneHeight=document.documentElement.clientHeight || document.body.clientHeight;
+            var osTop=document.documentElement.scrollTop || document.body.scrollTop;
+            var btn= document.getElementById('btnTop');
+            if(osTop>oneHeight)
+            {
+               btn.style.display='block';
+            }else
+            {
+                btn.style.display='none';
+            }
+
+        };
+    </script>
+</head>
+<body>
+        <div class="main">
+            <img src="tb_bg.jpg" />
+        </div>
+        <div class="back" id="btnTop">
+        </div>
+</body>
+</html>

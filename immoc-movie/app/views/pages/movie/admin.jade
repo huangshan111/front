@@ -1,0 +1,39 @@
+extends ../../layout
+block content
+    .container
+        .row
+            form.form-horizotal(method="post",action="/movie/save",enctype="multipart/form-data")
+                if movie._id
+                    input(type="hidden",name="movie[_id]",value=movie._id)
+                .form-group
+                    lable.col-sm-2.control-lable(for="inputTitle") 豆瓣电影id
+                    .col-sm-10
+                        input#doubanid.form-control(type="text")
+                .form-group
+                    lable.col-sm-2.control-lable(for="inputTitle") 电影名字
+                    .col-sm-10
+                        input#inputTitle.form-control(type="text",name="movie[title]",value=movie.title)
+                .form-group
+                    lable.col-sm-2.control-lable(for="inputDoctor") 电影导演
+                    .col-sm-10
+                        input#inputDoctor.form-control(type="text",name="movie[doctor]",value=movie.doctor)
+                .form-group
+                    lable.col-sm-2.control-lable(for="inputCountry") 国家
+                    .col-sm-10
+                        input#inputCountry.form-control(type="text",name="movie[country]",value=movie.country)
+                .form-group
+                    lable.col-sm-2.control-lable(for="inputLanguage") 语种
+                    .col-sm-10
+                        input#inputLanguage.form-control(type="text",name="movie[language]",value=movie.language)
+                //-.form-group
+                    lable.col-sm-2.control-lable(for="inputPicture") 海报
+                    .col-sm-10
+                        input#inputPicture.form-control(type="text",name="movie[picture]",value=movie.picture)
+                .form-group
+                    lable.col-sm-2.control-lable(for="inputLanguage") 上传海报
+                    .col-sm-10
+                         input(type="file",name="uploadPoster")
+                .form-group
+                    .col-sm-offset-2.col-sm-10
+                    button.btn.btn-default(type="submit") 录入
+    script(src='/js/douban.js')

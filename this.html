@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+//        function person(){
+//             var obj = new Object();
+//            //  this = obj;
+//                 alert(this);     // new 出来的 Person 对象
+//                // return this;
+//        }
+
+function person(name,age){
+    this.name=name;
+    this.age=age
+}
+
+function newOperator(Constr, args) {
+    var thisValue = Object.create(Constr.prototype,args); // (1)
+//    var result = Constr.call(thisValue, args);
+//    if (typeof result === 'object' && result !== null) {
+//        return result; // (2)
+//    }
+    return thisValue;
+}
+
+        var p = newOperator(person,{
+            size: {
+value:'您'
+            }
+        });
+        console.log(p);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

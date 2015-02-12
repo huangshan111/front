@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        window.onload=function(){
+            var ul=document.getElementById('ul1');
+            ul.onmouseover=function(e){
+               var e=  e|| window.event;
+               var target=e.srcElement || e.target;
+                if(target.nodeName.toLowerCase()=='li') {
+                    target.style.backgroundColor = 'red';
+                }
+            }
+
+            ul.onmouseout=function(e){
+                var e=  e|| window.event;
+                var target=e.srcElement || e.target;
+                if(target.nodeName.toLowerCase()=='li') {
+                    target.style.backgroundColor = '';
+                }
+            }
+
+            var btn= document.getElementById('btn1');
+            btn.onclick=function(){
+                var newli= document.createElement('li');
+                newli.innerHTML='0000';
+                ul.appendChild(newli);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type='button' value="添加li" id="btn1">
+    <ul id="ul1">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+    </ul>
+</body>
+</html>

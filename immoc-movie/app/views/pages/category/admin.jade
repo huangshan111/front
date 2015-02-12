@@ -1,0 +1,14 @@
+extends ../../layout
+block content
+    .container
+        .row
+            form.form-horizotal(method="post",action="/category/save")
+                if category._id
+                    input(type='hidden',name="category[_id]",value=category._id)
+                .form-group
+                    lable.col-sm-2.control-lable(for="inputTitle") 分类名字
+                    .col-sm-10
+                        input#inputTitle.form-control(type="text",name="category[name]",value=category.name)
+                .form-group
+                    .col-sm-offset-2.col-sm-10
+                    button.btn.btn-default(type="submit") 录入

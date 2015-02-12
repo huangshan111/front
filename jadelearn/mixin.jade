@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+    body
+        -var condition=false
+        if(condition)
+            p 哎呦喂
+        else
+            p 哈哈哈
+        -var name='jade'
+        case name
+            when 'jade'
+            when 'express'
+                p express1
+            default
+                p #{name}
+        mixin show
+            p hello world
+        +show()
+        mixin sayhello(name)
+            p hello world #{name}
+        +sayhello('习大大')
+
+        mixin attr(name)
+            p(class!=attributes.class) #{name}
+        +attr('attr')(class='ppp')
+
+        mixin attrs(name)
+            p&attributes(attributes) #{name}
+        +attrs('attrs')(class='ppp',id='ppp')
+
+        mixin magic(name,...items)
+            ul(class='#{name}')
+                each item in items
+                    li=item
+        +magic('light','node','jade','ejs')

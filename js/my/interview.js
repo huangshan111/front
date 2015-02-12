@@ -1,0 +1,3 @@
+define({
+    price:71
+});

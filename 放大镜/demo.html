@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>放大镜效果</title>
+    <style>
+        *{
+            margin: 0;padding: 0}
+        .zoom{
+            width: 400px;
+            height: 255px;
+            position: relative;
+        }
+        .ui-small{
+            position: relative;
+        }
+
+        #mask {
+            position: absolute;
+            display: block;
+            width: 400px;
+            height: 255px;
+            background-color: #fff;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            z-index: 10;
+        }
+
+        #ui-float{
+            width: 160px;
+            height: 120px;
+            position: absolute;
+            top:0;
+            left: 0;
+            background: #ffffcc;
+            border: 1px solid #ccc;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            display: none;
+            cursor: move;
+        }
+        #ui-big{
+            position: absolute;
+            top: 0;
+            left: 460px;
+            width: 400px;
+            height: 300px;
+            display: none;
+            overflow: hidden;
+        }
+
+        #ui-big img{
+            position: absolute;
+            z-index: 5;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function() {
+            var float = document.getElementById('ui-float');
+            var smallcontainer = document.getElementById('small-container');
+            var zoom = document.getElementById('zoom');
+
+            var mask= document.getElementById('mask');
+
+            var bigcontainer=document.getElementById('ui-big');
+
+            var bigimg=bigcontainer.getElementsByTagName('img')[0];
+
+            mask.onmouseover = function (e) {
+                float.style.display = 'block';
+                bigcontainer.style.display = 'block';
+            }
+            mask.onmouseout = function (e) {
+                float.style.display = 'none';
+                bigcontainer.style.display = 'none';
+            }
+
+            mask.onmousemove = function (e) {
+                var e=e|| window.event;
+                var left = e.clientX - zoom.offsetLeft-smallcontainer.offsetLeft - float.offsetWidth / 2
+                var top = e.clientY - zoom.offsetTop-smallcontainer.offsetTop - float.offsetHeight / 2
+
+                if (left < 0) {
+                    left = 0;
+                }
+                else if (left > (zoom.offsetWidth - float.offsetWidth)) {
+                    left = zoom.offsetWidth - float.offsetWidth;
+                }
+
+                if (top < 0) {
+                    top = 0;
+                }
+                else if (top > (zoom.offsetHeight - float.offsetHeight)) {
+                    top = zoom.offsetHeight - float.offsetHeight;
+                }
+
+                float.style.left=left+'px';
+                float.style.top=top+'px';
+
+                //放大
+                var precentx=left/(zoom.offsetWidth-float.offsetWidth);
+                var precenty=top/(zoom.offsetHeight-float.offsetHeight);
+
+                bigimg.style.left=-precentx*(bigimg.offsetWidth-bigcontainer.offsetWidth)+'px';
+                bigimg.style.top=-precenty*(bigimg.offsetHeight-bigcontainer.offsetHeight)+'px';
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="zoom" id="zoom">
+        <div class="ui-small" id="small-container">
+            <div id="mask"></div>
+            <div id="ui-float"></div>
+            <img src="macbook-small.jpg"/>
+        </div>
+        <div id="ui-big">
+            <img src="macbook-big.jpg"/>
+        </div>
+    </div>
+</body>
+</html>

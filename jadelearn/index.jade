@@ -1,0 +1,35 @@
+﻿doctype html
+html
+    head
+        meta(charset='utf-8')
+        title #{data.toUpperCase()} 首页
+    body
+        style.
+            body {color: #093389}
+        script.
+            var d='hello world'
+
+        h1 jade templete learn
+        #div1.error jade body test
+        p
+          |1.第一段
+          <strong>加粗</strong>
+          |2。第二段
+          |3 。第三段
+        -var html='text'
+        -var htmldata='<script>alert("1")</script>'
+        //    p #{html}
+            p !{htmldata}
+            p= html
+            p!= htmldata
+            p \#{html}
+            p \!{htmldata}
+        input(value=newdata)
+
+        -var items={course:"jade",site:"immoc"}
+        ul
+        -for(var k in items)
+            li=items[k]
+
+
+

@@ -1,0 +1,25 @@
+{
+  "name": "grunt-empty",
+  "version": "1.0.0",
+  "description": "learn grunt at an empty project",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "load-grunt-tasks": "^2.0.0",
+    "time-grunt": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grunt",
+    "empty"
+  ],
+  "author": "masterhs",
+  "license": "ISC"
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{background:#333}
+        #box{position: absolute;top: 100px;left: 150px;}
+        #img1{opacity: 0.7}
+        #img2{position: absolute;top: 0;left: 0;clip: rect(0,150px,150px,0)}
+        #main{position: absolute;top: 0;left: 0;border: 1px solid #ccc;width: 149px;height: 149px}
+        .minDiv{position: absolute;width: 6px;height: 6px;border: 1px solid #ccc}
+        .left-up{position: absolute;left: 0;top: 0;margin-left: -4px;margin-top: -4px;cursor: nw-resize}
+        .up{position: absolute;top: 0;margin-top: -4px;left: 50%;margin-left: -4px;cursor: n-resize}
+        .right-up{position: absolute;top: 0;margin-top: -4px;right: 0;margin-right: -4px;cursor: ne-resize}
+        .right{position: absolute;top: 50%;right: 0;margin-top: -4px;margin-right: -4px;cursor: e-resize;}
+        .right-down{position: absolute;bottom: 0;right: 0;margin-bottom: -4px;margin-right: -4px;cursor: se-resize;}
+        .down{position: absolute;left: 50%;bottom: 0;margin-bottom: -4px;margin-left: -4px;cursor: s-resize}
+        .left-down{position: absolute;left: 0;bottom: 0;margin-left: -4px;margin-bottom: -4px;cursor: sw-resize}
+        .left{position: absolute;left: 0;top: 50%;margin-top: -4px;margin-left: -4px;cursor: w-resize}
+    </style>
+    <script>
+//        function show(){
+//            function test(){
+//                console.log(this);
+//            }
+//            test();
+//        }
+//        show();
+        var x=3;
+        var foo={
+            x:2,
+            baz:{
+                    x:1,
+                    bar:function(){
+                           return this.x;
+                            }
+                    }
+        }
+        var go=foo.baz.bar;
+        console.log(go());
+        console.log(foo.baz.bar());
+    </script>
+</head>
+<body>
+<div id="box">
+    <img id="img1" src="image/cut.jpg"/>
+    <img id="img2" src="image/cut.jpg"/>
+    <div id="main">
+        <div class="minDiv left-up"></div>
+        <div class="minDiv up"></div>
+        <div class="minDiv right-up"></div>
+        <div class="minDiv right"></div>
+        <div class="minDiv right-down"></div>
+        <div class="minDiv down"></div>
+        <div class="minDiv left-down"></div>
+        <div class="minDiv left"></div>
+    </div>
+</div>
+
+</body>
+</html>

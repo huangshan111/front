@@ -1,0 +1,40 @@
+extends ../../layout
+block content
+    .container
+        .row
+            .col-lg-3
+                form(action='/movie/list' method='get')
+                    input.form-control(type='text',name='q',value=query)
+                    span.input-group-btn
+                        button.btn.btn-default(type="submit") 搜索
+            table(class="table table-striped")
+                tr
+                    td 导演
+                    td 电影名字
+                    td 语言
+                    td 国家
+                    td 操作
+                each movie in movies
+                    tr
+                        td=movie.doctor
+                        td=movie.title
+                        td=movie.language
+                        td=movie.country
+                        td
+                            a.btn.btn-success(href="/movie/detail/#{movie._id}",role='button') 查看
+                            a.btn.btn-success(href="/movie/update/#{movie._id}",role="button") 编辑
+                            a.del.btn.btn-success(data-id="#{movie._id}") 删除
+            a.btn.btn-primary(href="/movie/new") 添加
+            nav
+                ul.pagination
+                    - for (var i = 1; i <= pagecount; i++) {
+                        - if (currentPage == i) {
+                            li.active
+                                span #{currentPage}
+                        - }
+                        - else {
+                            li
+                                a(href='/movie/list?p=#{i}&q=#{query}') #{i}
+                        - }
+                    - }
+    script(src='/js/movie.js')

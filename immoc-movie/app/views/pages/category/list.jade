@@ -1,0 +1,15 @@
+extends ../../layout
+block content
+    .container
+        .row
+            table(class="table table-striped")
+                each cat in categories
+                    tr
+                        td=cat.name
+                        td=cat.createAt
+                        td=cat.updateAt
+                        td
+                            a.btn.btn-success(href="/category/detail/#{cat._id}") 查看
+                            a.btn.btn-success(href="/category/update/#{cat._id}") 编辑
+                            a.del.btn.btn-success(data-id="#{cat._id}") 删除
+            a.btn.btn-primary(href="/category/new") 添加

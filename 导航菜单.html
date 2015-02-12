@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            padding: 0;
+            font-size: 11pt;
+        }
+        .topmenu{
+            width: 220px;
+           border: 2px solid #e4393c;
+           margin: 0;
+            padding: 0;
+            font-size: 11pt;
+        }
+        .toptitle
+        {
+            height: 40px;
+        line-height: 40px;
+            text-align: center;
+            font-size: 12pt;
+background-color:#e4393c;
+            color: #ffffff;
+        }
+        .topmenu li {
+            list-style-type: none;
+            padding-left: 8px;
+            height: 30px;
+            line-height: 30px;
+            z-index: 3;
+            text-align: left;
+            background-image: url(1.jpg);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        .topmenu li a{
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .topmenu li a:hover{
+            text-decoration: underline;
+            color:red;
+            font-weight: bold;
+        }
+        .topmenu li:hover /*鼠标移动到上面时，应用的样式*/
+        {
+            border: 1px solid #DDD;
+            border-right: 0;
+            box-shadow: 0 0 8px #DDD;
+            -moz-box-shadow: 0 0 8px #DDD;
+            -webkit-box-shadow: 0 0 8px #DDD;
+            background-image: none;
+            height:30px;
+            border-left:4px solid #e4393c;
+        }
+        .topmenu li:hover .submenu /*悬浮层*/
+        {
+            display: block;
+        }
+
+        .topmenu li:hover span
+        {
+            display: inline-block;
+            width: 20px;
+            height: 30px;
+            float: right;
+            z-index: 20;
+            position: relative;
+            background-color: #ffffff;
+        }
+        .submenu{
+            display: none;
+           width: 750px;
+            left: 220px;
+            position: absolute;
+            top: 40px;
+            border: 1px solid #DDD;
+            z-index: 4;
+            background: white;
+            box-shadow: 0 0 8px #DDD;
+            -moz-box-shadow: 0 0 8px #DDD;
+            -webkit-box-shadow: 0 0 8px #DDD;
+        }
+        .leftdiv
+        {
+            float: left;
+            width: 477px;
+            margin: 5px;
+        }
+        .rightdiv
+        {
+            float: left;
+            width: 210px;
+            margin: 5px;
+        }
+
+        .leftdiv dl {
+            display: block;
+            border-bottom: 1px solid #EEE;
+            padding-bottom: 6px;
+            overflow: hidden;
+        }
+
+        .leftdiv dl dt{
+            display: block;
+            float: left;
+            padding-right: 6px;
+            line-height: 22px;
+            height: 22px;
+            line-height: 22px;
+            width: 60px;
+            text-align: right;
+        }
+
+        .leftdiv dl dt a{
+            text-decoration: underline;
+            font-weight: bold;
+            color: #e4393c;
+        }
+
+        .leftdiv dl dd{
+            display: block;
+            overflow: hidden;
+
+        }
+        .leftdiv dl dd a{
+            display: block;
+            font-size: 9pt;
+            line-height: 14px;
+            height: 14px;
+            padding: 0 8px;
+            border-left: 1px solid #CCC;
+            margin: 4px 0;
+            float: left;
+        }
+
+        /*.rightdiv dl {*/
+            /*display: block;*/
+            /*overflow: hidden;*/
+        /*}*/
+
+        /*.rightdiv dl dt{*/
+            /*display: block;*/
+            /*padding-left: 6px;*/
+            /*line-height: 22px;*/
+            /*height: 22px;*/
+            /*text-align: left;*/
+        /*}*/
+
+        /*.rightdiv dl dt a{*/
+            /*display: block;*/
+            /*color: red;*/
+            /*font-size: 10pt;*/
+            /*font-weight: bold;*/
+        /*}*/
+
+        /*.rightdiv dl dd{*/
+            /*height: 22px;*/
+            /*line-height: 22px;*/
+            /*font-size: 9pt;*/
+            /*font-weight: normal;*/
+        /*}*/
+
+        .rightdiv dl dd
+        {
+            margin: 3px 0;
+        }
+
+        .rightdiv dl dt
+        {
+            color: #e4393c;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .rightdiv dl dd a
+        {
+            font-size: 9pt;
+            color: #737373;
+            line-height: 10px;
+        }
+        .rightdiv dl dd a:hover
+        {
+            color: #737373;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<ul class="topmenu">
+    <div class="toptitle">
+        全部商品分类
+    </div>
+    <li><a href="#">图书、音像、数字商品</a><span></span>
+        <div class="submenu">
+            <div class="leftdiv">
+               <dl>
+                   <dt><a href="#"> 电子书</a></dt>
+                  <dd><a href="#">免费</a>
+                   <a href="#">小说</a>
+                   <a href="#">励志与成功</a>
+                   <a href="#">婚姻/两性</a>
+                   <a href="#">免费</a>
+                   <a href="#">小说</a>
+                   <a href="#">励志与成功</a>
+                   <a href="#">婚姻/两性</a>
+                   <a href="#">免费</a>
+                   <a href="#">小说</a>
+                   <a href="#">励志与成功</a>
+                   <a href="#">婚姻/两性</a>
+                   <a href="#">免费</a>
+                   <a href="#">小说</a>
+                   <a href="#">励志与成功</a>
+                   <a href="#">婚姻/两性</a></dd>
+               </dl>
+            </div>
+            <div class="rightdiv">
+                <dl>
+                    <dd>
+                        <a href="#">
+                            <img src="http://img10.360buyimg.com/vclist/jfs/t331/38/1925014037/19296/e5d22c5e/5444d111N28f3193e.jpg" width="194" height="70" title="少儿200-100">
+                        </a>
+                    </dd>
+                    <dd>
+                         <a href="#">
+                          <img src="http://img10.360buyimg.com/vclist/jfs/t331/38/1925014037/19296/e5d22c5e/5444d111N28f3193e.jpg" width="194" height="70" title="少儿200-100">
+                        </a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 推荐品牌</dt>
+                    <dd><a href="#">中华书局</a></dd>
+                    <dd>   <a href="#">    人民邮电出版社</a>     </dd>
+                    <dd>   <a href="#">    上海世纪出版股份有限公司</a>     </dd>
+                    <dd>   <a href="#">   电子工业出版社</a>     </dd>
+                    <dd>   <a href="#">   三联书店</a>     </dd>
+                    <dd>    <a href="#">   浙江少年儿童出版社</a>     </dd>
+                    <dd>    <a href="#">   人民文学出版社</a>     </dd>
+                    <dd>   <a href="#">   外语教学与研究出版社</a>     </dd>
+                    <dd>   <a href="#">   中信出版社化学工业出版社</a>     </dd>
+                    <dd>  <a href="#">   北京大学出版社</a>     </dd>
+
+                </dl>
+            </div>
+        </div>
+    </li>
+    <li><a href="#">家用电器</a></li>
+    <li><a href="#">手机、数码</a></li>
+    <li><a href="#">电脑、办公</a></li>
+    <li><a href="#">家居、家具、家装、厨具</a></li>
+    <li><a href="#">服饰内衣、珠宝首饰</a></li>
+    <li><a href="#">个护化妆</a></li>
+    <li><a href="#">鞋靴、箱包、钟表、奢侈品</a></li>
+    <li><a href="#">运动户外</a></li>
+    <li><a href="#">汽车用品</a></li>
+    <li><a href="#">母婴、玩具乐器</a></li>
+    <li><a href="#">食品饮料、酒类、生鲜</a></li>
+    <li><a href="#">营养保健</a></li>
+</ul>
+</body>
+</html>

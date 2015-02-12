@@ -1,0 +1,27 @@
+extends ../layout
+block content
+    .container
+        .row
+            table(class="table table-striped")
+                each movie in movies
+                    tr
+                        td=movie.doctor
+                        td=movie.title
+                        td=movie.language
+                        td=movie.country
+                        td
+                            a(href="/detail/#{movie._id}",class="btn") 查看
+                            a(href="/update/#{movie._id}",class="btn") 编辑
+                            a.del.btn(data-id="#{movie._id}") 删除
+            a.btn(href="/admin/create") 添加
+    script.
+        $(".del").click(function(){
+            var id=  $(this).data("id");
+            var self=$(this);
+            $.get('/admin/delete',{id:id},function(data){
+                if(data.success==1){
+                    self.parent().parent().remove();
+                }
+            })
+        });
+

@@ -1,0 +1,9 @@
+extends ../../layout
+block content
+    .container
+        .row
+            table(class="table table-striped")
+                tr
+                    td 电影分类
+                    td=category.name
+    script(src='/js/detail.js')
