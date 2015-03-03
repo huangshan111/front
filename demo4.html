@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <title>bootstrap第二课</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-
 </head>
 <body>
     <div class="container">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation" class="disabled"><a href="#">Messages</a></li>
+        </ul>
         <div class="row">
             <div class="col-md-12">
                 <a role="button" href="#" class="btn btn-default">订阅</a>
@@ -15,20 +19,46 @@
                 <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 <p class="text-success">  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
                 <p class="text-info">< Maecenas sed diam eget risus varius blandit sit amet non magna./p>
-                <p class="text-warning">      Etiam porta sem malesuada magna mollis euismod.
-            </p>
+                <p class="text-warning">      Etiam porta sem malesuada magna mollis euismod.</p>
                 <p class="text-danger">  Donec ullamcorper nulla non metus auctor fringilla.</p>
-
                 <a href="#" class="text-muted">注册</a>
-
-
-
-
-
-
-
-
-
+                <div class="btn-group btn-group-lg" role="group">
+                    <button type="button" class="btn btn-default">首页</button>
+                    <button type="button" class="btn btn-default">中间页</button>
+                    <button type="button" class="btn btn-default">末页</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="放大镜/macbook-small.jpg" alt="苹果笔记本"/>
+                </a>
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="放大镜/macbook-small.jpg" alt="苹果笔记本"/>
+                </a>
+                <div class="caption">
+                    <h3>6999</h3>
+                    <p>macbook air</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="放大镜/macbook-small.jpg" alt="苹果笔记本"/>
+                </a>
+                <div class="caption">
+                    <h3>9999</h3>
+                    <p>macbook pro</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
             </div>
         </div>
     </div>
