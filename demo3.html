@@ -2,20 +2,101 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-    <script>
-//         function aa(){
-//
-//         }
-//
+    <title>bootstrap学习</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript">
 
-        var li =document.getElementsByClassName('div1');
-        function sayhello(){
-            alert('hello world')
-        }
     </script>
 </head>
 <body>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>bootstrap初体验  <small>my first lesson</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+               <p class="lead">
+                   bootstrap真的很棒，值得学习使用
+               </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">div1</div>
+            <div class="col-md-3">div2</div>
+            <div class="col-md-3 col-md-offset-3">div4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                    <thead>
+                    <tr>
+                    <th>用户名</th>
+                    <th>密码</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>james</td>
+                        <td>lucy</td>
+                    </tr>
+                    <tr>
+                        <td>uvxjkvxjklzn</td>
+                        <td>vxcmziowvn</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-1 control-label" for="email">电子邮件</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="email" placeholder="请输入电子邮件"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label" for="password">密码</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="password" placeholder="请输入密码"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-11 col-md-offset-1">
+                            <button type="submit" class="btn btn-default">sign in</button>
+                        </div>
+                    </div>
+                </form>
+
+
+        <div class="row">
+            <div class="col-md-3 col-md-offset-9">
+                <p class="text-center">呵呵</p>
+            </div>
+            <div class="col-md-6">
+                <h3>分类</h3>
+                <ul>
+                    <li>java</li>
+                    <li>paython</li>
+                    <li>go</li>
+                    <li>ruby</li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <h2>有序列表</h2>
+                <ol>
+                    <li>初级</li>
+                    <li>中级</li>
+                    <li>高级</li>
+                    <li>专家</li>
+                </ol>
+                <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+                <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+                <samp>This text is meant to be treated as sample output from a computer program.</samp>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
